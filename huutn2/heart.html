@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .heart {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      transform: rotate(-45deg);
+      margin: 100px auto;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      background: red;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      position: absolute;
+    }
+
+    .heart::before {
+      left: 0;
+      top: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>

@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-  </head>
 
-  <body >
-    <audio autoplay loop play>
-      <source src="music/danhchoem.mp3" type="audio/mp3" />
-    </audio>
-    <!-- 星空html -->
-    <!-- <div> -->
-    <div class="container2">
-      <div class="content">
-        <canvas id="universe"></canvas>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- <audio autoplay loop play>
+    <source src="music/danhchoem.mp3" type="audio/mp3" />
+  </audio> -->
+  <!-- 星空html -->
+  <!-- <div> -->
+  <div class="container2">
+    <div class="content">
+      <canvas id="universe"></canvas>
+    </div>
+
+  </div>
+  <!-- </div> -->
+  <div class="title">
+    <!-- EDIT HERE -->
+    <h3 class="STARDUST1">2023</h3>
+    <h1 class="STARDUST2">Happy Woman Day!!</h1>
+    <!-- <h3 class="STARDUST3">Happy woman day <strong>❤</strong> Y O U</h3> -->
+    <h3 class="STARDUST3">Author : HuuTN2</h3>
+    <img class="img" src="./z4971829124787_5a24cbd953cdfeebe3b00702a8541765.jpg" alt="JUNO_OKYO" />
+    <canvas id="pinkboard"></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/particle.js"></script>
+  <script src="js/universe.js"></script>
+  <script>
     
-    </div>
-    <!-- </div> -->
-    <div class="title">
-      <!-- EDIT HERE -->
-      <h3 class="STARDUST1">2023</h3>
-      <h1 class="STARDUST2">Happy Woman Day!!</h1>
-      <!-- <h3 class="STARDUST3">Happy woman day <strong>❤</strong> Y O U</h3> -->
-      <h3 class="STARDUST3">Author : HuuTN2</h3>
-      <img class="img" src="./z4748558472149_fcc79cf4792cda541749ca2d77b584ea.jpg" alt="JUNO_OKYO" />
-      <canvas id="pinkboard"></canvas>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/particle.js"></script>
-    <script src="js/universe.js"></script>
-  </body>
+    // index.js
+    let audioPlaying = true,
+      backgroundAudio, browser;
+    browser = navigator.userAgent.toLowerCase();
+    $('<audio class="audio1" src="music/danhchoem.mp3" autoplay loop></audio>').prependTo('body');
+    if (!browser.indexOf('firefox') > -1) {
+      $('<embed id="background-audio" src="music/danhchoem.mp3" autostart="1"></embed>').prependTo('body');
+      backgroundAudio = setInterval(function () {
+        $("#background-audio").remove();
+        $('<embed id="background-audio" src="music/danhchoem.mp3"></embed>').prependTo('body');
+      }, 120000); // 120000 is the duration of your audio which in this case 2 mins.
+    }
+  </script>
+</body>
+
 </html>
