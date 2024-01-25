@@ -13,6 +13,7 @@
   <!-- <audio autoplay loop play>
     <source src="music/danhchoem.mp3" type="audio/mp3" />
   </audio> -->
+  <audio id="myAudio" src="./danhchoem.mp3" autoplay loop></audio>
   <!-- 星空html -->
   <!-- <div> -->
   <div class="container2">
@@ -24,11 +25,11 @@
   <!-- </div> -->
   <div class="title">
     <!-- EDIT HERE -->
-    <h3 class="STARDUST1">2023</h3>
-    <h1 class="STARDUST2">Happy Woman Day!!</h1>
+    <h3 class="STARDUST1">2024</h3>
+    <h1 class="STARDUST2">Happy New Year!!</h1>
     <!-- <h3 class="STARDUST3">Happy woman day <strong>❤</strong> Y O U</h3> -->
     <h3 class="STARDUST3">Author : HuuTN2</h3>
-    <img class="img" src="./z4971829124787_5a24cbd953cdfeebe3b00702a8541765.jpg" alt="JUNO_OKYO" />
+    <img class="img" src="./z4971777562026_7d665f704ba742738b040a39ae5f033f.jpg" alt="JUNO_OKYO" />
     <canvas id="pinkboard"></canvas>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -37,18 +38,19 @@
   <script src="js/universe.js"></script>
   <script>
     
-    // index.js
-    let audioPlaying = true,
-      backgroundAudio, browser;
-    browser = navigator.userAgent.toLowerCase();
-    $('<audio class="audio1" src="music/danhchoem.mp3" autoplay loop></audio>').prependTo('body');
-    if (!browser.indexOf('firefox') > -1) {
-      $('<embed id="background-audio" src="music/danhchoem.mp3" autostart="1"></embed>').prependTo('body');
-      backgroundAudio = setInterval(function () {
-        $("#background-audio").remove();
-        $('<embed id="background-audio" src="music/danhchoem.mp3"></embed>').prependTo('body');
-      }, 120000); // 120000 is the duration of your audio which in this case 2 mins.
-    }
+    // Đoạn mã JavaScript để chạy khi trang được tải
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Lấy thẻ audio
+      var audio = document.getElementById('myAudio');
+      
+      // Hàm để phát nhạc
+      function playAudio() {
+        audio.play();
+      }
+      
+      // Kích hoạt việc phát nhạc khi người dùng tương tác (nhấp chuột)
+      document.addEventListener('click', playAudio);
+    });
   </script>
 </body>
 
